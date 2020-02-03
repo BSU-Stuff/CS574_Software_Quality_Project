@@ -19,4 +19,10 @@ https://github.com/codestream/Horoscopes - 9.6k loc - android app, not sure how 
 
 https://github.com/jgraber/ataraxis - 15k loc - AtaraxiS is a tool to encrypt data and manage passwords on a USB-stick
 
+https://github.com/gdromard/mymoviecollection - 8.3k loc - A web application that handle your movie collection.
 
+https://github.com/srpunjabi/blackjack - 9k loc - Text based BlackJack game in java
+
+https://github.com/paulballesty/YouTrack - 11.1k loc - Issue tracker web application
+
+https://github.com/MrClement/Chess - 9.2k - Public files for AI Chess
