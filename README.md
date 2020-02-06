@@ -9,9 +9,9 @@ Elena Sherman --ensure invitation is sent to her github esherman77
 
 Potential Projects:
 --------------------------
-https://github.com/tito/2048 - 5.4 LOC
+https://github.com/tito/2048 - 5.4k LOC
 
-https://github.com/pacampbell/Game - 10.8 LOC
+https://github.com/pacampbell/Game - 10.8k LOC
 
 https://github.com/coderwoodman/BillingSystem - 8k loc
 
@@ -21,8 +21,8 @@ https://github.com/jgraber/ataraxis - 15k loc - AtaraxiS is a tool to encrypt da
 
 https://github.com/gdromard/mymoviecollection - 8.3k loc - A web application that handle your movie collection.
 
-https://github.com/srpunjabi/blackjack - 9k loc - Text based BlackJack game in java
+https://github.com/srpunjabi/blackjack - 9k loc - Text based BlackJack game in java **
 
 https://github.com/paulballesty/YouTrack - 11.1k loc - Issue tracker web application
 
-https://github.com/MrClement/Chess - 9.2k - Public files for AI Chess
+https://github.com/MrClement/Chess - 9.2k - Public files for AI Chess **
