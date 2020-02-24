@@ -28,6 +28,31 @@ a call from game -> Preformance Timing -> Game Time (start in Game.java line 51)
 This can be done with a javaMOP along the lines of this regular expression: (Game PreformanceTiming GameTime)*
 _________________________________
 2 sequential.
+
+When a game is created we need to have access to the users mouse and keyboard (or one or the other depending on the game) if for some reason the mouse/keyboard are never taken into account and the game continues to intialize we could end up with a really lame game. Ensure that the mouse keybaord listeners are initalized and working before moving on to other parts of launching the game. (Game.java line:310, KeyBoard.java line: 14,Mouse.java line:15, MouseInput.java line:34 , KeyBoardInput.java line:29) ```
+
+ public void initialize()
+    {
+        running = true;
+        // Default is Cornflower blue
+        background = (background == null) ? background = new Color(100, 149, 237) : background;
+        // Add Keyboard
+        this.addKeyListener(Keyboard.keyboard);
+        this.canvas.addKeyListener(Keyboard.keyboard);
+        // Add Mouse
+        this.canvas.addMouseListener(Mouse.mouse);
+        this.canvas.addMouseMotionListener(Mouse.mouse);
+        // Create GameTime object
+        gameTime = new GameTime();
+        // Create the Graphics2D context to be used for font metrics.
+        FontHelper.initialize();
+    }
+    ```
+  From here we need to be sure that the initialization of the keyboard/mouse is actually accuring. Using a javaMOP to ensure sequence of events could work.
+  
+  ```ere: (Game.Initalized KeyBoard KeyBoardInput Mouse MouseInput)*```
+ 
+ view test #10 for more on KeyBoard 
 _________________________________
 3 sequential.
 _________________________________
@@ -71,8 +96,7 @@ a java assertion can also be used to double check that the tick time is correct 
 _________________________________
 7. ensure that the GameTime delta is accuratly keeping track of time passing since the last pull to the clock. (GameTime line: 60). delta time is being updated in tick.
 
- ```assert currTime > prevTime
-assert deltaTime != null && deltaTime >=0 ```
+ ```assert currTime > prevTime && deltaTime != null && deltaTime >=0 ```
 _________________________________
 8. ExitGame in Game is currently taking in three exit statuses 0, -1, or defualt in a switch statement. It doesnt appear that anything in this software is syncronized (Game.java line:169).
 
@@ -115,9 +139,36 @@ a simple assertion chould be made here to ensure that running does not already e
 
  ```assert running != true ```
 
-
 _________________________________
-10.
+10. Depending on the frame rate it seems like we could be loosing key presses in the KeyboardInput.java if the key is down during the delta time of a frame is it possible that we miss a key? (Keyboardinput.java line:42)
+
+```    
+public synchronized void poll()
+    {
+        for(int i = 0; i < KEY_COUNT; ++i)
+        {
+            // Set the key state
+            if(currentKeys[i])
+            {
+                // If the key is down now, but was not
+                // down last frame, set it to ONCE,
+                // otherwise, set it to PRESSED
+                if(keys[i] == KeyState.RELEASED)
+                    keys[i] = KeyState.ONCE;
+                else
+                    keys[i] = KeyState.PRESSED;
+            }
+            else
+            {
+                keys[i] = KeyState.RELEASED;
+            }
+        }
+    }
+```
+    
+
+I am not sure if there is a way to test this if it is missing data. Could an assertion be used in GameTime to do a pull on the current keyboard during a tick?
+
 _________________________________
 11.
 _________________________________
