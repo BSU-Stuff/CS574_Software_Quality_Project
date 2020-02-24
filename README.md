@@ -11,7 +11,7 @@ Potential Projects:
 --------------------------
 https://github.com/tito/2048 - 5.4k LOC
 
-https://github.com/pacampbell/Game - 10.8k LOC
+https://github.com/pacampbell/Game - 10.8k LOC //chosen project
 
 https://github.com/coderwoodman/BillingSystem - 8k loc
 
