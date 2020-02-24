@@ -22,6 +22,11 @@ __________________________________
 
 1 sequential.
 
+Test the validility of creating a new game. When creating a new game ensure that it goes in the order of 
+a call from game -> Preformance Timing -> Game Time (start in Game.java line 51).
+
+This can be done with a javaMOP along the lines of this regular expression: (Game PreformanceTiming GameTime)*
+
 2 sequential.
 
 3 sequential.
@@ -30,11 +35,79 @@ __________________________________
 
 5 sequential.
 
-6.
+6. ensure that Game Time Tick is able to know correctly if the time has stopped and if the tick is correct. (GameTime.java line: 121). The tick is used to know how much time has passed between frames. This helps accuratly keep track of frames per second. 
 
-7.
+given function:
+-----------------------------------
+ public void tick()
+    {
+        if(stopped)
+        {
+            this.deltaTime = 0;
+            return;
+        }
 
-8.
+        lCurrTime = System.currentTimeMillis();
+        this.currTime = lCurrTime;
+
+        // Time difference between this frame and the previous.
+        this.deltaTime = (this.currTime - this.prevTime);
+
+        // Prepare for next frame.
+        this.prevTime = this.currTime;
+
+        // Set to zero incase of inaccuracy
+        if(this.deltaTime < 0.0f)
+        {
+            this.deltaTime = 0.0f;
+        }
+    }
+--------------------------------------------------------
+a java assertion can be used to double check that stopped is still stopped once the end of tick() has been reached
+//assert stopped =true after the final if statement.
+
+a java assertion can also be used to double check that the tick time is correct between frames. 
+//assert prevTime != null && prevTime >= 0 
+
+7. ensure that the GameTime delta is accuratly keeping track of time passing since the last pull to the clock. (GameTime line: 60). delta time is being updated in tick.
+
+//assert currTime > prevTime
+//assert deltaTime != null && deltaTime >=0
+
+8. ExitGame in Game is currently taking in three exit statuses 0, -1, or defualt in a switch statement. It doesnt appear that anything in this software is syncronized (Game.java line:169).
+
+--------------------------------------------------------
+    public static void exitGame(int errorCode)
+    {
+        switch(errorCode)
+        {
+            case 0:
+                System.out.println("Game exited successfully.");
+                break;
+            case -1:
+                System.out.println("Game exited unexpectedly.");
+                break;
+            default:
+                System.out.println("Unknown exit status...");
+                System.out.println("Quitting..");
+                break;  
+        }
+        System.out.println("Exit Code: " + errorCode);
+        System.exit(errorCode);
+    }
+    
+    ...
+    
+        public static void exitGame()
+    {
+        Game.exitGame(0); // 0 is proper exit code
+    }
+--------------------------------------------------------
+The system.exit(errorCode) line could cause odd issues to occur. a javaMOP could be used to ensure that the exitGame
+method is not called multiple times in a row.
+
+ere: Game (exitGame) 
+
 
 9.
 
