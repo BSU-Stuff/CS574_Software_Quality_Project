@@ -26,19 +26,18 @@ Test the validility of creating a new game. When creating a new game ensure that
 a call from game -> Preformance Timing -> Game Time (start in Game.java line 51).
 
 This can be done with a javaMOP along the lines of this regular expression: (Game PreformanceTiming GameTime)*
-
+_________________________________
 2 sequential.
-
+_________________________________
 3 sequential.
-
+_________________________________
 4 sequential.
-
+_________________________________
 5 sequential.
-
+_________________________________
 6. ensure that Game Time Tick is able to know correctly if the time has stopped and if the tick is correct. (GameTime.java line: 121). The tick is used to know how much time has passed between frames. This helps accuratly keep track of frames per second. 
 
-given function:
-_________________________________
+
 ```
 public void tick()
     {
@@ -63,18 +62,18 @@ public void tick()
         }
     }
 ```
-_________________________________
+
 a java assertion can be used to double check that stopped is still stopped once the end of tick() has been reached
 //assert stopped =true after the final if statement.
 
 a java assertion can also be used to double check that the tick time is correct between frames. 
 //assert prevTime != null && prevTime >= 0 
-
+_________________________________
 7. ensure that the GameTime delta is accuratly keeping track of time passing since the last pull to the clock. (GameTime line: 60). delta time is being updated in tick.
 
 //assert currTime > prevTime
 //assert deltaTime != null && deltaTime >=0
-
+_________________________________
 8. ExitGame in Game is currently taking in three exit statuses 0, -1, or defualt in a switch statement. It doesnt appear that anything in this software is syncronized (Game.java line:169).
 
 _________________________________
@@ -110,27 +109,27 @@ The system.exit(errorCode) line could cause odd issues to occur. a javaMOP could
 method is not called multiple times in a row.
 
 ere: Game (exitGame) 
-
+_________________________________
 9.
-
+_________________________________
 10.
-
+_________________________________
 11.
-
+_________________________________
 12.
-
+_________________________________
 13.
-
+_________________________________
 14.
-
+_________________________________
 15.
-
+_________________________________
 16.
-
+_________________________________
 17.
-
+_________________________________
 18.
-
+_________________________________
 19.
-
+_________________________________
 20.
