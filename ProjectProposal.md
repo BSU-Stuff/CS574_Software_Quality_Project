@@ -55,10 +55,19 @@ When a game is created we need to have access to the users mouse and keyboard (o
  view test #10 for more on KeyBoard 
 _________________________________
 3 sequential.
+In order to properly use the project, we need to call the super initalize, update and draw methods. Once this has been validated. We can use the project.
+
+Should be a javaMOP specification that requires "ere : (super.initalize super.update super.draw)"
 _________________________________
 4 sequential.
+Game.java: createWindow
+	Before creating a window, we need to set the settings first. Need to specify the sequence of set method required for this function to work.
+
+JavaMOP specifying the sequence required before this function may be called.
 _________________________________
 5 sequential.
+A MenuBar has to be created first, before Menus can be added. Test the sequence that MenuBar is created before Menus are added with JavaMOP.
+Should be: create MenuBar, add Menus, add Menuitems (can't find the calls currently)
 _________________________________
 6. ensure that Game Time Tick is able to know correctly if the time has stopped and if the tick is correct. (GameTime.java line: 121). The tick is used to know how much time has passed between frames. This helps accuratly keep track of frames per second. 
 
@@ -230,15 +239,67 @@ ________________________________
  
 _________________________________
 14.
+The FPS counter and MSPF are printed to the window to show statistics on the framerate. We need to make sure that it isn't printed outside the viewable window.
+
+...
+    public void draw(Graphics2D g2d)
+    {
+        g2d.setFont(font);
+        // Sets the Color to draw
+        g2d.setColor(textColor);
+        // Draw the statistics on the screen
+        g2d.drawString("FPS: " + fps, (int)position.x, (int)position.y);
+        g2d.drawString("MSPF: " + mspf, (int)position.x, (int)position.y + 20);
+    }
+...
+
+We can use JML here.
 _________________________________
 15.
+game.framework: Vector2.java, Vector3.java, Vector4.java
+There are Vector2, Vector3, and Vector4 classes. They specify incomplete but we can test their current functionality. Make sure they are doing what the author specified for them to do. Make sure object variables get set, the value returned is the value in the object, etc.
 _________________________________
 16.
+game.framework: GameHelper.java
+Make sure that the GameHelper class does it's job. Specifically, osIndependentFilePath(String path) returns a valid file regardless of OS (macOS, Windows, Linux). Listed as a "hack". Would be nice to test it.
 _________________________________
 17.
+game.framework: Many classes here to test for functionality. Matrix, Matrix3, MathHelper, Quaternion, Rectangle. We can test these classes to make sure they are performing the correct calculations.
 _________________________________
 18.
+game.gui: Menu.java
+We can test this function to make sure that the functions are doing what they are supposed to. Using JML, we can veirfy that add(..) for example makes the linked list of items in the menu increase.
 _________________________________
 19.
+game.gui: MenuItem.java
+We can verify that the actions of a mouse moving or clicking on a menu item has the desired effect.
 _________________________________
 20.
+game.gui: MenuBar.java
+Make sure menus display properly with no font clipping.
+...
+    public void draw(Graphics2D g2d) 
+    {
+        // Set the paneColor of the MenuBar
+        g2d.setColor(paneColor);
+        // Fill The Menu Bar
+        g2d.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
+        // Set The Color of the Border
+        g2d.setColor(borderColor);
+        // Draw The Border
+        switch(anchor)
+        {
+            case BOTTOM:
+                g2d.drawLine(bounds.x, bounds.y, bounds.width, bounds.y);
+                break;
+            case TOP:
+            default:
+                g2d.drawLine(bounds.x, bounds.height, bounds.width, bounds.height);
+                break;
+        }
+        // Draw The Menu's on this Menu Bar
+        for(Menu menu : menus)
+            menu.draw(g2d);
+    }
+...
+Are the x, y, width and height the correct size or fit in the screen?
