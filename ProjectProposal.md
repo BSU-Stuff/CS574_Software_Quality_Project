@@ -1,6 +1,6 @@
 
 Overview of the code:
-______________________
+-----------------------------------
 
 The Java 2D Game Libary is framework created by Paul Campbell with the help of Michael Salerno, Mathieu Tanguay and
 Annuate (real name not given). The purpose of this library is to help out those who are looking to get into the creation
@@ -9,7 +9,7 @@ deal with texture and buffer loading images, as well as help a user create gui c
 
 
 Stats of code:
-______________________
+-----------------------------------
 
  Total source lines of code: 8662
  Total Number of classes: 42
@@ -18,7 +18,7 @@ ______________________
 
 
 Program properties to conform to:
-__________________________________
+-----------------------------------
 
 1 sequential.
 
@@ -38,15 +38,15 @@ This can be done with a javaMOP along the lines of this regular expression: (Gam
 6. ensure that Game Time Tick is able to know correctly if the time has stopped and if the tick is correct. (GameTime.java line: 121). The tick is used to know how much time has passed between frames. This helps accuratly keep track of frames per second. 
 
 given function:
------------------------------------
- public void tick()
+_________________________________
+```
+public void tick()
     {
         if(stopped)
         {
             this.deltaTime = 0;
             return;
         }
-
         lCurrTime = System.currentTimeMillis();
         this.currTime = lCurrTime;
 
@@ -62,7 +62,8 @@ given function:
             this.deltaTime = 0.0f;
         }
     }
---------------------------------------------------------
+```
+_________________________________
 a java assertion can be used to double check that stopped is still stopped once the end of tick() has been reached
 //assert stopped =true after the final if statement.
 
@@ -76,7 +77,8 @@ a java assertion can also be used to double check that the tick time is correct 
 
 8. ExitGame in Game is currently taking in three exit statuses 0, -1, or defualt in a switch statement. It doesnt appear that anything in this software is syncronized (Game.java line:169).
 
---------------------------------------------------------
+_________________________________
+```
     public static void exitGame(int errorCode)
     {
         switch(errorCode)
@@ -102,12 +104,12 @@ a java assertion can also be used to double check that the tick time is correct 
     {
         Game.exitGame(0); // 0 is proper exit code
     }
---------------------------------------------------------
+ ```
+_________________________________
 The system.exit(errorCode) line could cause odd issues to occur. a javaMOP could be used to ensure that the exitGame
 method is not called multiple times in a row.
 
 ere: Game (exitGame) 
-
 
 9.
 
