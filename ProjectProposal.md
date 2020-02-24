@@ -177,7 +177,29 @@ _________________________________
 /*@ key[i].KeyState == \old key[i].KeyState @*/ 
 ```
 _________________________________
-12.
+12. If frames per second of our game get bellow a certain point then our game starts to become unusable. For example if the FPS becomes ridiculous (say 1) we will miss keyboard and mouse interupts. (TestFrameworks.java line:55) bellow is taken from a 
+sample class where the user updates the game based on the fps. 
+
+    public void update(GameTime gameTime)
+    {
+        // Call base class
+        super.update(gameTime);
+        // TODO:
+        this.fps.update(gameTime);
+        
+        
+        //<editor-fold defaultstate="collapsed" desc="System & Menu Keys">
+        if(Keyboard.keyDownOnce(KeyEvent.VK_ESCAPE))
+        {
+            Game.exitGame();
+        }
+        //</editor-fold>
+    }
+    
+ an assertion here making sure that the game is operating at at least 30 fps would be ideal to make sure that our game is 
+ operating well.
+ 
+ ```assert fps > 30 ```
 _________________________________
 13.
 _________________________________
