@@ -64,19 +64,18 @@ public void tick()
 ```
 
 a java assertion can be used to double check that stopped is still stopped once the end of tick() has been reached
-//assert stopped =true after the final if statement.
+ ```assert stopped =true after the final if statement ```
 
 a java assertion can also be used to double check that the tick time is correct between frames. 
-//assert prevTime != null && prevTime >= 0 
+ ```assert prevTime != null && prevTime >= 0  ```
 _________________________________
 7. ensure that the GameTime delta is accuratly keeping track of time passing since the last pull to the clock. (GameTime line: 60). delta time is being updated in tick.
 
-//assert currTime > prevTime
-//assert deltaTime != null && deltaTime >=0
+ ```assert currTime > prevTime
+assert deltaTime != null && deltaTime >=0 ```
 _________________________________
 8. ExitGame in Game is currently taking in three exit statuses 0, -1, or defualt in a switch statement. It doesnt appear that anything in this software is syncronized (Game.java line:169).
 
-_________________________________
 ```
     public static void exitGame(int errorCode)
     {
@@ -104,13 +103,19 @@ _________________________________
         Game.exitGame(0); // 0 is proper exit code
     }
  ```
-_________________________________
+
 The system.exit(errorCode) line could cause odd issues to occur. a javaMOP could be used to ensure that the exitGame
 method is not called multiple times in a row.
 
-ere: Game (exitGame) 
+ ```ere: Game (exitGame)  ```
 _________________________________
-9.
+9. There is nothing to check to see if a game is already initialized. if a game is already initialized should it be allowed to create a new game? or should it ignore the command for a new initialization(Game.java line: 310).
+
+a simple assertion chould be made here to ensure that running does not already equal true when the game is being initalized 
+
+ ```assert running != true ```
+
+
 _________________________________
 10.
 _________________________________
