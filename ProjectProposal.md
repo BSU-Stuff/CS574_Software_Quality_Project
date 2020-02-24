@@ -25,7 +25,7 @@ Program properties to conform to:
 Test the validility of creating a new game. When creating a new game ensure that it goes in the order of 
 a call from game -> Preformance Timing -> Game Time (start in Game.java line 51).
 
-This can be done with a javaMOP along the lines of this regular expression: (Game PreformanceTiming GameTime)*
+This can be done with a javaMOP along the lines ```ere:  (Game PreformanceTiming GameTime)*```
 _________________________________
 2 sequential.
 
@@ -52,7 +52,6 @@ When a game is created we need to have access to the users mouse and keyboard (o
   
 ```ere: (Game.Initalized KeyBoard KeyBoardInput Mouse MouseInput)*
 ```
- 
  view test #10 for more on KeyBoard 
 _________________________________
 3 sequential.
@@ -199,9 +198,36 @@ sample class where the user updates the game based on the fps.
  an assertion here making sure that the game is operating at at least 30 fps would be ideal to make sure that our game is 
  operating well.
  
- ```assert fps > 30 ```
-_________________________________
-13.
+ ```assert fps > 30 ``` 
+ 
+ This same issue occurs at Game.java line:136, if a the tick() funciton takes too long to return we could miss keybaord/mouse
+ interupts.
+ 
+
+________________________________
+13. Along the lines of test case number 9, we should assume that only one game can be opened on a persons computer at once. If gameTime is already initialized with another game then it should not be reset for the new game being created. 
+
+
+```    public void initialize()
+    {
+        running = true;
+        // Default is Cornflower blue
+        background = (background == null) ? background = new Color(100, 149, 237) : background;
+        // Add Keyboard
+        this.addKeyListener(Keyboard.keyboard);
+        this.canvas.addKeyListener(Keyboard.keyboard);
+        // Add Mouse
+        this.canvas.addMouseListener(Mouse.mouse);
+        this.canvas.addMouseMotionListener(Mouse.mouse);
+        // Create GameTime object
+        gameTime = new GameTime();
+        // Create the Graphics2D context to be used for font metrics.
+        FontHelper.initialize();
+    }
+ ```
+ 
+ Using java assertion we can be sure that gameTime is currently null before it is assigned to a new GameTime.
+ 
 _________________________________
 14.
 _________________________________
