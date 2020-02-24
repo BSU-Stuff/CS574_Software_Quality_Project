@@ -29,8 +29,8 @@ This can be done with a javaMOP along the lines of this regular expression: (Gam
 _________________________________
 2 sequential.
 
-When a game is created we need to have access to the users mouse and keyboard (or one or the other depending on the game) if for some reason the mouse/keyboard are never taken into account and the game continues to intialize we could end up with a really lame game. Ensure that the mouse keybaord listeners are initalized and working before moving on to other parts of launching the game. (Game.java line:310, KeyBoard.java line: 14,Mouse.java line:15, MouseInput.java line:34 , KeyBoardInput.java line:29) ```
-
+When a game is created we need to have access to the users mouse and keyboard (or one or the other depending on the game) if for some reason the mouse/keyboard are never taken into account and the game continues to intialize we could end up with a really lame game. Ensure that the mouse keybaord listeners are initalized and working before moving on to other parts of launching the game. (Game.java line:310, KeyBoard.java line: 14,Mouse.java line:15, MouseInput.java line:34 , KeyBoardInput.java line:29) 
+```
  public void initialize()
     {
         running = true;
@@ -47,10 +47,11 @@ When a game is created we need to have access to the users mouse and keyboard (o
         // Create the Graphics2D context to be used for font metrics.
         FontHelper.initialize();
     }
-    ```
+```
   From here we need to be sure that the initialization of the keyboard/mouse is actually accuring. Using a javaMOP to ensure sequence of events could work.
   
-  ```ere: (Game.Initalized KeyBoard KeyBoardInput Mouse MouseInput)*```
+```ere: (Game.Initalized KeyBoard KeyBoardInput Mouse MouseInput)*
+```
  
  view test #10 for more on KeyBoard 
 _________________________________
@@ -170,7 +171,11 @@ public synchronized void poll()
 I am not sure if there is a way to test this if it is missing data. Could an assertion be used in GameTime to do a pull on the current keyboard during a tick?
 
 _________________________________
-11.
+11. From test 10's code snipit you can see that there is logic using enum information. A openJML post condition here should be used to be sure that the pressed key is actually pressed and not actually just a second too long hold. (modification to this openJML will likely be needed)
+
+```
+/*@ key[i].KeyState == \old key[i].KeyState @*/ 
+```
 _________________________________
 12.
 _________________________________
