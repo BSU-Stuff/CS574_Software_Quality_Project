@@ -8,13 +8,13 @@ import java.awt.Graphics2D;
 
 public class PerformanceTiming 
 {
-    private int frameCount;
-    private float fps;
-    private float mspf;
-    private float t_base;
-    private Color textColor;
-    private Vector2 position;
-    private Font font;
+    private /*@ spec_public @*/ int frameCount;
+    private /*@ spec_public @*/ float fps;
+    private /*@ spec_public @*/ float mspf;
+    private /*@ spec_public @*/ float t_base;
+    private /*@ spec_public @*/ Color textColor;
+    private /*@ spec_public @*/ Vector2 position;
+    private /*@ spec_public @*/ Font font;
     
     /**
      * Default Constructor
@@ -49,6 +49,14 @@ public class PerformanceTiming
         }
     }
 
+    /*@
+     @ requires g2d != null;
+     @ requires this.textColor.getRed() <= 255;
+     @ requires this.textColor.getBlue() <= 255;
+     @ requires this.textColor.getGreen() <= 255;
+     @ requires this.position.x <= g2d.getClipBounds().getWidth() && position.x >= 0;
+     @ requires this.position.y <= g2d.getClipBounds().getHeight() && position.y >= 0;
+     @*/
     /**
      * Draws the timing statistics
      * @param g2d 
