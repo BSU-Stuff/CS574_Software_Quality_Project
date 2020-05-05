@@ -115,7 +115,7 @@ public class GameHelper
     /**
      * Stores the height of the Game Window.
      * Only to be used within the framework itself.
-     * @param width Height of the Game Window.
+     * @param height Height of the Game Window.
      */
     protected static void setScreenHeight(int height)
     {

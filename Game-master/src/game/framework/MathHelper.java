@@ -5,10 +5,10 @@ import java.awt.Color;
 public class MathHelper
 {
     /**
-     * Clamps a float value between a min and a max value. <br />
-     * If the value is below min, value is set to min. <br />
-     * If the value is above max, value is set to max. <br />
-     * If the value is min < value < max then we leave it alone. <br />
+     * Clamps a float value between a min and a max value. 
+     * If the value is below min, value is set to min. 
+     * If the value is above max, value is set to max. 
+     * If the value is min &lt; value &lt; max then we leave it alone. 
      * @param value Value to be clamped.
      * @param min Minimum value the value can be.
      * @param max Maximum value the value can be.
@@ -20,10 +20,10 @@ public class MathHelper
     }
 
     /**
-     * Clamps a integer value between a min and a max value.<br />
-     * If the value is below min, value is set to min. <br />
-     * If the value is above max, value is set to max. <br />
-     * If the value is min < value < max then we leave it alone.
+     * Clamps a integer value between a min and a max value.
+     * If the value is below min, value is set to min. 
+     * If the value is above max, value is set to max. 
+     * If the value is min &lt; value &lt; max then we leave it alone.
      * @param value Value to be clamped.
      * @param min Minimum value the value can be.
      * @param max Maximum value the value can be.
@@ -71,7 +71,7 @@ public class MathHelper
     }
     
     /**
-     * Linear interpolation <br />
+     * Linear interpolation 
      * value1 + (value2 - value1) * amount
      * @param start A float value we want to interpolate with.
      * @param end A float value we want to interpolate with.

@@ -21,21 +21,21 @@ import javax.swing.JFrame;
 public abstract class Game extends JFrame
 {
     // Window Initalization Vars
-    private Canvas canvas;
-    private BufferStrategy buffer;
-    private GraphicsEnvironment ge;
-    private GraphicsDevice gd;
-    private GraphicsConfiguration gc;
-    private VolatileImage vi;
+    private /*@ spec_public @*/ Canvas canvas;
+    private /*@ spec_public @*/ BufferStrategy buffer;
+    private /*@ spec_public @*/ GraphicsEnvironment ge;
+    private /*@ spec_public @*/ GraphicsDevice gd;
+    private /*@ spec_public @*/ GraphicsConfiguration gc;
+    private /*@ spec_public @*/ VolatileImage vi;
     // Window Settings
-    private int width;
-    private int height;
+    private /*@ spec_public @*/ int width;
+    private /*@ spec_public @*/ int height;
     // Game Loop Variables
-    private boolean running;
-    private Color background; // Background color to clear too
-    private GameTime gameTime; // Keeps Track of time in the game
+    private /*@ spec_public @*/ boolean running;
+    private /*@ spec_public @*/ Color background; // Background color to clear too
+    private /*@ spec_public @*/ GameTime gameTime; // Keeps Track of time in the game
     // Debug Variable (User needs to implement update and draw if they want to use)
-    protected PerformanceTiming fps;
+    protected /*@ spec_public @*/ PerformanceTiming fps;
     
     //<editor-fold defaultstate="collapsed" desc="Constructor">
     /**
@@ -112,9 +112,9 @@ public abstract class Game extends JFrame
     
     //<editor-fold defaultstate="collapsed" desc="Game Loop">
     /**
-     * Everything that happens in the program happens here. <br />
-     * Input -> Game Logic -> Draw <br />
-     * ^                        | <br />
+     * Everything that happens in the program happens here. 
+     * Input -&gt; Game Logic -&lt; Draw 
+     * ^                        | 
      * |________________________|
      */
     public final void gameLoop()

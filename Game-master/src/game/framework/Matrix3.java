@@ -3,7 +3,7 @@ package game.framework;
 /**
  * Matrix class representing a 3x3 matrix.
  * Can be used with the java AffineTransform.
- * <br />
+ * 
  * <h1>Not Yet Implemented</h1>
  * <ul>
  *  <li>Add</li>
@@ -492,7 +492,7 @@ public class Matrix3
     
     /**
      * Matrix Vector multiplication
-     * @param v A Vector3 that we want to multiply with this Matrix3.
+     * @param x A Vector3 that we want to multiply with this Matrix3.
      * @return Returns a Vector3 containing the product of Ax.
      */
     public Vector4 multiply(Vector3 x)

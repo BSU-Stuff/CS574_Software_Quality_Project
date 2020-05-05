@@ -14,7 +14,7 @@ public class ColorHelper
     public static final Color transparent = new Color(0, 0, 0, 0);
 
     /**
-     * Linear interpolation <br />
+     * Linear interpolation 
      * value1 + (value2 - value1) * amount
      * @param start A Color we want to interpolate with.
      * @param end A Color we want to interpolate with.

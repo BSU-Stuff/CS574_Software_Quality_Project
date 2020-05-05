@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  * A generalized Matrix with n x m dimensions.
- * <br />
+ * 
  * <h1>Not Yet Implemented</h1>
  * <ul>
  *  <li>Determinant</li>

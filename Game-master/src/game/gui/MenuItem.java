@@ -19,7 +19,7 @@ public class MenuItem implements GuiComponent
         
     /**
      * Complete Constructor
-     * @param LABEL String containing the desired label for the MenuItem.
+     * @param label String containing the desired label for the MenuItem.
      * @param hoverColor Text color when the mouse is over this MenuItem.
      */
     public MenuItem(String label, Color hoverColor)
@@ -102,6 +102,11 @@ public class MenuItem implements GuiComponent
             fontColor = Color.WHITE;
     }
 
+    /*@
+      @ requires g2d != null;
+      @ ensures g2d.getFont() == this.font;
+      @ ensures g2d.getColor() == this.fontColor;
+      @*/
     /**
      * Draws this MenuItem.
      * @param g2d Graphics2D object to draw this MenuItem

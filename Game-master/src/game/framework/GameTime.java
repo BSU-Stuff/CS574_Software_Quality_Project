@@ -2,14 +2,14 @@ package game.framework;
 
 public class GameTime
 {
-    private double deltaTime;
-    private long baseTime;
-    private long pausedTime;
-    private long stopTime;
-    private long prevTime;
-    private long currTime;
-    private long lCurrTime;
-    private boolean stopped;
+    private /*@ spec_public @*/ double deltaTime;
+    private /*@ spec_public @*/ long baseTime;
+    private /*@ spec_public @*/ long pausedTime;
+    private /*@ spec_public @*/ long stopTime;
+    private /*@ spec_public @*/ long prevTime;
+    private /*@ spec_public @*/ long currTime;
+    private /*@ spec_public @*/ long lCurrTime;
+    private /*@ spec_public @*/ boolean stopped;
 
     /**
      * Complete Constructor.
@@ -64,11 +64,11 @@ public class GameTime
 
     /**
      * Resets the GameTime timer.
-     * Resets: <br />
-     *  baseTime = System.currentTimeMillis(); <br />
-     *  prevTime = System.currentTimeMillis(); <br />
-     *  stopTime = 0; <br />
-     *  stopped  = false; <br />
+     * Resets: 
+     *  baseTime = System.currentTimeMillis(); 
+     *  prevTime = System.currentTimeMillis();
+     *  stopTime = 0; 
+     *  stopped  = false; 
      */
     public void reset()
     {

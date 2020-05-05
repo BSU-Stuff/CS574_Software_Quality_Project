@@ -3,8 +3,8 @@ package game.framework;
 import java.io.Serializable;
 
 /**
- * Vector4 class representing a vector of <x, y, z, w> components.
- * <br />
+ * Vector4 class representing a vector of &lt;x, y, z, w&gt; components.
+ * 
  * <h1>Not Yet Implemented</h1>
  * <ul>
  *  <li>Transform</li>
@@ -359,7 +359,7 @@ public class Vector4 extends Vector3 implements Serializable
     
     //<editor-fold defaultstate="collapsed" desc="CatmullRom">
     /**
-     * Definition found @ http://paulbourke.net/miscellaneous/interpolation/ & http://forums.indiegamer.com/showthread.php?4905-Teach-me-splines-for&p=66079#post66079
+     * Definition found @ http://paulbourke.net/miscellaneous/interpolation/ and http://forums.indiegamer.com/showthread.php?4905-Teach-me-splines-forp=66079#post66079
      * @param p0 The first position in the interpolation.
      * @param p1 The second position in the interpolation.
      * @param p2 The third position in the interpolation.
@@ -475,7 +475,7 @@ public class Vector4 extends Vector3 implements Serializable
     //<editor-fold defaultstate="collapsed" desc="Divide">
     /**
      * Performs scalar division between a Vector4 and a scalar. 
-     * @param vec A Vector4 we want to divide.
+     * @param a A Vector4 we want to divide.
      * @param scalar A scalar we want to divide the Vector4 by.
      * @return Returns a new Vector4 divide by the scalar.
      */
@@ -487,7 +487,7 @@ public class Vector4 extends Vector3 implements Serializable
     /**
      * Performs scalar division between a Vector4 and a scalar. 
      * Converts integer arguments to float.
-     * @param vec A Vector4 we want to divide.
+     * @param a A Vector4 we want to divide.
      * @param scalar A scalar we want to divide the Vector4 by.
      * @return Returns a new Vector4 divide by the scalar.
      */
@@ -546,8 +546,8 @@ public class Vector4 extends Vector3 implements Serializable
      * Performs the dot product between two Vector4's.
      * Also known as the scalar product.
      * The result of a dot product is a scalar value.
-     * @param veca A Vector4 that we want to perform the dot product on.
-     * @param vecb A Vector4 that we want to perform the dot product on.
+     * @param a A Vector4 that we want to perform the dot product on.
+     * @param b A Vector4 that we want to perform the dot product on.
      * @return Returns a dot b.
      */
     public static float dotProduct(Vector4 a, Vector4 b)
@@ -559,8 +559,8 @@ public class Vector4 extends Vector3 implements Serializable
      * Performs the dot product between a Vector4 and a Vector3.
      * Also known as the scalar product.
      * The result of a dot product is a scalar value.
-     * @param veca A Vector4 that we want to perform the dot product on.
-     * @param vecb A Vector3 that we want to perform the dot product on.
+     * @param a A Vector4 that we want to perform the dot product on.
+     * @param b A Vector3 that we want to perform the dot product on.
      * @return Returns a dot b.
      */
     public static float dotProduct(Vector4 a, Vector3 b)
@@ -572,8 +572,8 @@ public class Vector4 extends Vector3 implements Serializable
      * Performs the dot product between a Vector4 and a Vector2.
      * Also known as the scalar product.
      * The result of a dot product is a scalar value.
-     * @param veca A Vector4 that we want to perform the dot product on.
-     * @param vecb A Vector2 that we want to perform the dot product on.
+     * @param a A Vector4 that we want to perform the dot product on.
+     * @param b A Vector2 that we want to perform the dot product on.
      * @return Returns a dot b.
      */
     public static float dotProduct(Vector4 a, Vector2 b)
@@ -634,8 +634,8 @@ public class Vector4 extends Vector3 implements Serializable
     
     /**
      * Checks the equality between two Vector4
-     * @param veca A Vector4 that we want to compare.
-     * @param vecb A Vector4 that we want to compare.
+     * @param a A Vector4 that we want to compare.
+     * @param b A Vector4 that we want to compare.
      * @return Returns the result of the comparison between the two Vector4.
      */
     public static boolean equals(Vector4 a, Vector4 b)
@@ -699,7 +699,7 @@ public class Vector4 extends Vector3 implements Serializable
     /**
      * Linear interpolation
      * value1 + (value2 - value1) * amount
-     * @param value2 A Vector4 we want to interpolate with this Vector4.
+     * @param that A Vector4 we want to interpolate with this Vector4.
      * @param amount A value between 0 and 1 indicating the weight of value2.
      * @return Returns the linear interpolation between two Vector4.
      */
@@ -755,8 +755,8 @@ public class Vector4 extends Vector3 implements Serializable
     
     //<editor-fold defaultstate="collapsed" desc="Max and Min">
     /**
-     * @param veca A Vector4 we want to find a max value from.
-     * @param vecb A Vector4 we want to find a max value from.
+     * @param a A Vector4 we want to find a max value from.
+     * @param b A Vector4 we want to find a max value from.
      * @return Returns a Vector4 containing the max value from each components.
      */
     public static Vector4 max(Vector4 a, Vector4 b)
@@ -769,8 +769,8 @@ public class Vector4 extends Vector3 implements Serializable
     }
     
     /**
-     * @param veca A Vector4 we want to find a min value from.
-     * @param vecb A Vector4 we want to find a min value from.
+     * @param a A Vector4 we want to find a min value from.
+     * @param b A Vector4 we want to find a min value from.
      * @return Returns a Vector4 containing the min value from each components.
      */
     public static Vector4 min(Vector4 a, Vector4 b)
@@ -786,7 +786,7 @@ public class Vector4 extends Vector3 implements Serializable
     //<editor-fold defaultstate="collapsed" desc="Multiply">
     /**
      * Multiplies a Vector4 by a scalar.
-     * @param veca A Vector4 we want to multiply.
+     * @param a A Vector4 we want to multiply.
      * @param scalar A scalar value we want to multiply into the Vector4.
      * @return Returns a new Vector4 multiplied by the scalar.
      */
@@ -798,7 +798,7 @@ public class Vector4 extends Vector3 implements Serializable
     /**
      * Multiplies a Vector4 by a scalar.
      * Converts integer arguments to float.
-     * @param veca A Vector4 we want to multiply.
+     * @param a A Vector4 we want to multiply.
      * @param scalar A scalar value we want to multiply into the Vector4.
      * @return Returns a new Vector4 multiplied by the scalar.
      */
@@ -854,7 +854,7 @@ public class Vector4 extends Vector3 implements Serializable
     //<editor-fold defaultstate="collapsed" desc="Normalize">
     /**
      * Normalizes a input Vector4
-     * @param vec Vector4 that we want to normalize.
+     * @param a Vector4 that we want to normalize.
      * @return Vector4 that is normalized.
      */
     public static Vector4 normalize(Vector4 a)
@@ -909,7 +909,7 @@ public class Vector4 extends Vector3 implements Serializable
     
     //<editor-fold defaultstate="collapsed" desc="Special Vectors">
     /**
-     * Special type of Vector4; The One vector, <1.0, 1.0 ,1.0, 1.0>
+     * Special type of Vector4; The One vector, &lt;1.0, 1.0 ,1.0, 1.0&gt;
      * @return Returns a Vector4 with all components set to 1.0.
      */
     public static Vector4 one()
@@ -918,7 +918,7 @@ public class Vector4 extends Vector3 implements Serializable
     }
     
     /**
-     * Returns the unit vector for the x-axis. <1.0, 0.0, 0.0, 0.0>
+     * Returns the unit vector for the x-axis. &lt;1.0, 0.0, 0.0, 0.0&gt;
      * @return Returns a Vector4 with the x component set to 1.0.
      */
     public static Vector4 unitX()
@@ -927,7 +927,7 @@ public class Vector4 extends Vector3 implements Serializable
     }
     
     /**
-     * Returns the unit vector for the y-axis. <0.0, 1.0, 0.0, 0.0>
+     * Returns the unit vector for the y-axis. &lt;0.0, 1.0, 0.0, 0.0&gt;
      * @return Returns a Vector4 with the y component set to 1.0.
      */
     public static Vector4 unitY()
@@ -937,7 +937,7 @@ public class Vector4 extends Vector3 implements Serializable
     
     
     /**
-     * Returns the unit vector for the z-axis. <0.0, 0.0, 1.0, 0.0>
+     * Returns the unit vector for the z-axis. &lt;0.0, 0.0, 1.0, 0.0&gt;
      * @return Returns a Vector4 with the z component set to 1.0.
      */
     public static Vector4 unitZ()
@@ -946,7 +946,7 @@ public class Vector4 extends Vector3 implements Serializable
     }
     
     /**
-     * Returns the unit vector for the w-axis. <0.0, 0.0, 0.0, 1.0>
+     * Returns the unit vector for the w-axis. &lt;0.0, 0.0, 0.0, 1.0&gt;
      * @return Returns a Vector4 with the w component set to 1.0.
      */
     public static Vector4 unitW()
@@ -956,7 +956,7 @@ public class Vector4 extends Vector3 implements Serializable
     
     
     /**
-     * Special type of Vector4; Zero vector also known as the null vector, <0.0, 0.0, 0.0, 0.0>
+     * Special type of Vector4; Zero vector also known as the null vector, &lt;0.0, 0.0, 0.0, 0.0&gt;
      * @return Returns a Vector4 with all components set to 0.0.
      */
     public static Vector4 zero()
@@ -968,8 +968,8 @@ public class Vector4 extends Vector3 implements Serializable
     //<editor-fold defaultstate="collapsed" desc="Subtract">
     /**
      * Performs Vector4 Subtraction on two Vector4
-     * @param veca A Vector4 to be subtracted.
-     * @param vecb A Vector4 to be subtracted.
+     * @param a A Vector4 to be subtracted.
+     * @param b A Vector4 to be subtracted.
      * @return Returns a new Vector4 that is the difference between the two provided Vector4.
      */
     public static Vector4 subtract(Vector4 a, Vector4 b)
@@ -979,8 +979,8 @@ public class Vector4 extends Vector3 implements Serializable
     
     /**
      * Performs Vector4 Subtraction on a Vector4 and a Vector3
-     * @param veca A Vector4 to be subtracted.
-     * @param vecb A Vector3 to be subtracted.
+     * @param a A Vector4 to be subtracted.
+     * @param b A Vector3 to be subtracted.
      * @return Returns a new Vector4 that is the difference between the Vector4 and the Vector3.
      */
     public static Vector4 subtract(Vector4 a, Vector3 b)
@@ -990,8 +990,8 @@ public class Vector4 extends Vector3 implements Serializable
     
     /**
      * Performs Vector4 Subtraction on a Vector3 and a Vector4
-     * @param veca A Vector3 to be subtracted.
-     * @param vecb A Vector4 to be subtracted.
+     * @param a A Vector3 to be subtracted.
+     * @param b A Vector4 to be subtracted.
      * @return Returns a new Vector4 that is the difference between the Vector3 and the Vector4.
      */
     public static Vector4 subtract(Vector3 a, Vector4 b)
@@ -1001,8 +1001,8 @@ public class Vector4 extends Vector3 implements Serializable
     
     /**
      * Performs Vector4 Subtraction on a Vector4 and a Vector2
-     * @param veca A Vector4 to be subtracted.
-     * @param vecb A Vector2 to be subtracted.
+     * @param a A Vector4 to be subtracted.
+     * @param b A Vector2 to be subtracted.
      * @return Returns a new Vector4 that is the difference between the Vector4 and the Vector2.
      */
     public static Vector4 subtract(Vector4 a, Vector2 b)
@@ -1012,8 +1012,8 @@ public class Vector4 extends Vector3 implements Serializable
     
     /**
      * Performs Vector4 Subtraction on a Vector2 and a Vector4
-     * @param veca A Vector2 to be subtracted.
-     * @param vecb A Vector4 to be subtracted.
+     * @param a A Vector2 to be subtracted.
+     * @param b A Vector4 to be subtracted.
      * @return Returns a new Vector4 that is the difference between the Vector2 and the Vector4.
      */
     public static Vector4 subtract(Vector2 a, Vector4 b)
@@ -1082,7 +1082,7 @@ public class Vector4 extends Vector3 implements Serializable
     
     /**
      * Creates a new Vector4 from a Vector3 and a w value and subtracts it from this.
-     * @param a A Vector3 that we want to subtract.
+     * @param vec A Vector3 that we want to subtract.
      * @param w A w value we want to append to the Vector3.
      * @return Returns a new Vector4 that is the difference between this Vector4 and that Vector3 and a w value.
      */
@@ -1093,7 +1093,7 @@ public class Vector4 extends Vector3 implements Serializable
     
     /**
      * Creates a new Vector4 from a Vector2, a z value, and a w value and subtracts it from this.
-     * @param a A Vector2 that we want to subtract.
+     * @param vec A Vector2 that we want to subtract.
      * @param z A z value we want to append to the Vector2.
      * @param w A w value we want to append to the Vector2.
      * @return Returns a new Vector4 that is the difference between this Vector4 and that Vector3 and a w value.
@@ -1196,7 +1196,7 @@ public class Vector4 extends Vector3 implements Serializable
     
     //<editor-fold defaultstate="collapsed" desc="To String">
     /**
-     * Converts the Vector4 to a string. <x,y,z,w>
+     * Converts the Vector4 to a string. &lt;x,y,z,w&gt;
      * @return Returns a string representing the Vector4.
      */
     @Override

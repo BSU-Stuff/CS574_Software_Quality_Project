@@ -12,13 +12,13 @@ import java.util.LinkedList;
 
 public class MenuBar implements GuiComponent
 {
-    private Anchor anchor;
-    private Rectangle bounds;
-    private LinkedList<Menu> menus;
-    private Color paneColor, borderColor;
-    private Font font;
+    private /*@ spec_public @*/ Anchor anchor;
+    private /*@ spec_public @*/ Rectangle bounds;
+    private /*@ spec_public @*/ LinkedList<Menu> menus;
+    private /*@ spec_public @*/ Color paneColor, borderColor;
+    private /*@ spec_public @*/ Font font;
     // Font Metrics
-    private FontRenderContext frc;
+    private /*@ spec_public @*/ FontRenderContext frc;
     
     /**
      * Complete Constructor.
@@ -75,7 +75,12 @@ public class MenuBar implements GuiComponent
     {
         this(Anchor.TOP, new Font("Times New Roman", Font.PLAIN, 16), Color.GRAY, Color.BLACK);
     }
-    
+ 
+    /*@
+      @ requires menu != null;
+      @ ensures this.menus.size() == \old(this.menus.size() + 1);
+      @ ensures this.menus.getLast() == menu;
+      @*/
     /**
      * Adds a Menu to the MenuBar.
      * @param menu A Menu to be added to the MenuBar.
@@ -138,6 +143,9 @@ public class MenuBar implements GuiComponent
             menu.update(gameTime);
     }
 
+    /*@
+      @ requires g2d != null;
+      @*/
     /**
      * Draws The MenuBar component.
      * @param g2d Graphics2D object containing the drawable surface of the window.
@@ -147,10 +155,12 @@ public class MenuBar implements GuiComponent
     {
         // Set the paneColor of the MenuBar
         g2d.setColor(paneColor);
+        /*@ ensures g2d.getColor() == this.panelColor; @*/
         // Fill The Menu Bar
         g2d.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
         // Set The Color of the Border
         g2d.setColor(borderColor);
+        /*@ ensures g2d.getColor() == this.borderColor; @*/
         // Draw The Border
         switch(anchor)
         {

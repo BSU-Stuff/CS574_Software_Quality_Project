@@ -3,8 +3,8 @@ package game.framework;
 import java.io.Serializable;
 
 /**
- * Vector2 class representing a vector of <x, y> components.
- * <br />
+ * Vector2 class representing a vector of &lt;x, y&gt; components.
+ * 
  * <h1>Not Yet Implemented</h1>
  * <ul>
  *  <li>Transform</li>
@@ -180,17 +180,17 @@ public class Vector2 implements Serializable
     //<editor-fold defaultstate="collapsed" desc="Barycentric">
     /**
      * The Vector2 Barycentric method takes three vectors specifying the Cartesian coordinates of the triangle vertices, V1, V2, and V3), and
-     * two areal coordinates b2 and b3 of some point P (b2 is the amount1 argument, and b3 is the amount2 argument). <br />
-     * The b2 coordinate relates to vertex V2, and the b3coordinate relates to V3. <br />
-     * Barycentric then calculates the Cartesian coordinate of P as follows: <br />
-       Px = ( (1 - b2 - b3) * V1x ) + (b2 * V2x) + (b3 * V3x); <br />
-       Py = ( (1 - b2 - b3) * V1y ) + (b2 * V2y) + (b3 * V3y); <br />
+     * two areal coordinates b2 and b3 of some point P (b2 is the amount1 argument, and b3 is the amount2 argument). 
+     * The b2 coordinate relates to vertex V2, and the b3coordinate relates to V3. 
+     * Barycentric then calculates the Cartesian coordinate of P as follows: 
+       Px = ( (1 - b2 - b3) * V1x ) + (b2 * V2x) + (b3 * V3x); 
+       Py = ( (1 - b2 - b3) * V1y ) + (b2 * V2y) + (b3 * V3y); 
      * Thus, to calculate the 2D Cartesian coordinates of P, you would pass the coordinates of the triangle vertices to Barycentric together with the appropriate
-     * normalized barycentric coordinates of P. <br />
-     * If ( (amount1 <= 0) and (amount2 >= 0) and (1 − amount1 − amount2 >= 0) ), then the point is inside the triangle defined by value1, value2, and value3.<br />
-     * If ( (amount1 == 0) and (amount2 >= 0) and (1 − amount1 − amount2 >= 0) ), then the point is on the line defined by value1 and value3.<br />
-     * If ( (amount1 >= 0) and (amount2 == 0) and (1 − amount1 − amount2 >= 0) ), then the point is on the line defined by value1 and value2.<br />
-     * If ( (amount1 >= 0) and (amount2 >= 0) and (1 − amount1 − amount2 == 0) ), then the point is on the line defined by value2 and value3.<br />
+     * normalized barycentric coordinates of P. 
+     * If ( (amount1 &lt;= 0) and (amount2 &gt;= 0) and (1 − amount1 − amount2 &gt;= 0) ), then the point is inside the triangle defined by value1, value2, and value3.
+     * If ( (amount1 == 0) and (amount2 &gt;= 0) and (1 − amount1 − amount2 &gt;= 0) ), then the point is on the line defined by value1 and value3.
+     * If ( (amount1 &gt;= 0) and (amount2 == 0) and (1 − amount1 − amount2 &gt;= 0) ), then the point is on the line defined by value1 and value2.
+     * If ( (amount1 &gt;= 0) and (amount2 &gt;= 0) and (1 − amount1 − amount2 == 0) ), then the point is on the line defined by value2 and value3.
      * @param v1 A Vector2 representing a vertex of a triangle.
      * @param v2 A Vector2 representing a vertex of a triangle.
      * @param v3 A Vector2 representing a vertex of a triangle.
@@ -209,7 +209,7 @@ public class Vector2 implements Serializable
 
     //<editor-fold defaultstate="collapsed" desc="CatmullRom">
     /**
-     * Definition found @ http://paulbourke.net/miscellaneous/interpolation/ & http://forums.indiegamer.com/showthread.php?4905-Teach-me-splines-for&p=66079#post66079
+     * Definition found @ http://paulbourke.net/miscellaneous/interpolation/ and http://forums.indiegamer.com/showthread.php?4905-Teach-me-splines-forp=66079#post66079
      * Performs a Catmull-Rom interpolation with the provided points.
      * @param p0 The first position in the interpolation.
      * @param p1 The second position in the interpolation.
@@ -469,8 +469,8 @@ public class Vector2 implements Serializable
 
     /**
      * Checks the equality between two Vector2
-     * @param veca A Vector2 that we want to compare.
-     * @param vecb A Vector2 that we want to compare.
+     * @param a A Vector2 that we want to compare.
+     * @param b A Vector2 that we want to compare.
      * @return Returns the result of the comparison between the two Vector2.
      */
     public static boolean equals(Vector2 a, Vector2 b)
@@ -541,7 +541,7 @@ public class Vector2 implements Serializable
     /**
      * Linear interpolation
      * value1 + (value2 - value1) * amount
-     * @param value2 A Vector2 we want to interpolate with this Vector2.
+     * @param that A Vector2 we want to interpolate with this Vector2.
      * @param amount A value between 0 and 1 indicating the weight of value2.
      * @return Returns the linear interpolation between two Vector2.
      */
@@ -555,6 +555,7 @@ public class Vector2 implements Serializable
     /**
      * Computes the magnitude of a Vector2.
      * Magnitude is also known as the length of the vector.
+     * @param vec The vector to find the magnitude
      * @return Returns the magnitude of the Vector2.
      */
     public static float magnitude(Vector2 vec)
@@ -576,6 +577,7 @@ public class Vector2 implements Serializable
     //<editor-fold defaultstate="collapsed" desc="Magnitide Squared">
     /**
      * Calculates the magnitude of a Vector2 squared.
+     * @param veca vector to square
      * @return Returns the magnitude of the Vector2 squared.
      */
     public static float magnitudeSquared(Vector2 veca)
@@ -827,7 +829,7 @@ public class Vector2 implements Serializable
 
     //<editor-fold defaultstate="collapsed" desc="Special Vectors">
     /**
-     * Returns a special type of vector; The one vector <1,1>
+     * Returns a special type of vector; The one vector &lt;1,1&gt;
      * @return returns the special one vector.
      */
     public static Vector2 one()
@@ -855,7 +857,7 @@ public class Vector2 implements Serializable
 
     /**
      * Returns a special type of Vector
-     * The Zero vector, also known as the null vector <0,0>
+     * The Zero vector, also known as the null vector &lt;0,0&gt;
      * @return Vector2
      */
     public static Vector2 zero()
@@ -953,7 +955,7 @@ public class Vector2 implements Serializable
 
     //<editor-fold defaultstate="collapsed" desc="To String">
     /**
-     * Converts the Vector2 to a string. <x,y>
+     * Converts the Vector2 to a string. &lt;x,y&gt;
      * @return Returns a string representing the Vector2.
      */
     @Override

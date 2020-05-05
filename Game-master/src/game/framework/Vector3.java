@@ -3,8 +3,8 @@ package game.framework;
 import java.io.Serializable;
 
 /**
- * Vector3 class representing a vector of <x, y, z> components.
- * <br />
+ * Vector3 class representing a vector of &lt;x, y, z&gt; components.
+ * 
  * <h1>Not Yet Implemented</h1>
  * <ul>
  *  <li>Transform</li>
@@ -278,7 +278,7 @@ public class Vector3 extends Vector2 implements Serializable
     
     //<editor-fold defaultstate="collapsed" desc="CatmulRom">
     /**
-     * Definition found @ http://paulbourke.net/miscellaneous/interpolation/ & http://forums.indiegamer.com/showthread.php?4905-Teach-me-splines-for&p=66079#post66079
+     * Definition found @ http://paulbourke.net/miscellaneous/interpolation/ and http://forums.indiegamer.com/showthread.php?4905-Teach-me-splines-forp=66079#post66079
      * @param p0 The first position in the interpolation.
      * @param p1 The second position in the interpolation.
      * @param p2 The third position in the interpolation.
@@ -592,8 +592,8 @@ public class Vector3 extends Vector2 implements Serializable
      * Performs the dot product between two Vector3's.
      * Also known as the scalar product.
      * The result of a dot product is a scalar value.
-     * @param veca A Vector3 that we want to perform the dot product on.
-     * @param vecb A Vector3 that we want to perform the dot product on.
+     * @param a A Vector3 that we want to perform the dot product on.
+     * @param b A Vector3 that we want to perform the dot product on.
      * @return Returns a dot b.
      */
     public static float dotProduct(Vector3 a, Vector3 b)
@@ -605,8 +605,8 @@ public class Vector3 extends Vector2 implements Serializable
      * Performs the dot product between a Vector3 and a Vector2.
      * Also known as the scalar product.
      * The result of a dot product is a scalar value.
-     * @param veca A Vector3 that we want to perform the dot product on.
-     * @param vecb A Vector2 that we want to perform the dot product on.
+     * @param a A Vector3 that we want to perform the dot product on.
+     * @param b A Vector2 that we want to perform the dot product on.
      * @return Returns a dot b.
      */
     public static float dotProduct(Vector3 a, Vector2 b)
@@ -719,7 +719,7 @@ public class Vector3 extends Vector2 implements Serializable
     /**
      * Linear interpolation
      * value1 + (value2 - value1) * amount
-     * @param value2 A Vector3 we want to interpolate with this Vector3.
+     * @param that A Vector3 we want to interpolate with this Vector3.
      * @param amount A value between 0 and 1 indicating the weight of value2.
      * @return Returns the linear interpolation between two Vector3.
      */
@@ -775,8 +775,8 @@ public class Vector3 extends Vector2 implements Serializable
     
     //<editor-fold defaultstate="collapsed" desc="Max & Min">
     /**
-     * @param veca A Vector3 we want to find a max value from.
-     * @param vecb A Vector3 we want to find a max value from.
+     * @param a A Vector3 we want to find a max value from.
+     * @param b A Vector3 we want to find a max value from.
      * @return Returns a Vector3 containing the max value from each components.
      */
     public static Vector3 max(Vector3 a, Vector3 b)
@@ -788,8 +788,8 @@ public class Vector3 extends Vector2 implements Serializable
     }
     
     /**
-     * @param veca A Vector3 we want to find a min value from.
-     * @param vecb A Vector3 we want to find a min value from.
+     * @param a A Vector3 we want to find a min value from.
+     * @param b A Vector3 we want to find a min value from.
      * @return Returns a Vector3 containing the min value from each components.
      */
     public static Vector3 min(Vector3 a, Vector3 b)
@@ -804,7 +804,7 @@ public class Vector3 extends Vector2 implements Serializable
     //<editor-fold defaultstate="collapsed" desc="Multiply">
     /**
      * Multiplies a Vector3 by a scalar
-     * @param veca A Vector3 we want to multiply.
+     * @param a A Vector3 we want to multiply.
      * @param scalar A scalar value we want to multiply into the Vector3.
      * @return Returns a new Vector3 multiplied by the scalar.
      */
@@ -816,7 +816,7 @@ public class Vector3 extends Vector2 implements Serializable
     /**
      * Multiplies a Vector3 by a scalar
      * Converts integer values to float.
-     * @param veca A Vector3 we want to multiply.
+     * @param a A Vector3 we want to multiply.
      * @param scalar A scalar value we want to multiply into the Vector3.
      * @return Returns a new Vector3 multiplied by the scalar.
      */
@@ -985,7 +985,7 @@ public class Vector3 extends Vector2 implements Serializable
     
     //<editor-fold defaultstate="collapsed" desc="Special Vectors">
     /**
-     * Special type of Vector3; The One vector, <1.0, 1.0 ,1.0>
+     * Special type of Vector3; The One vector, &lt;1.0, 1.0 ,1.0&gt;
      * @return Returns a Vector3 with all components set to 1.0.
      */
     public static Vector3 one()
@@ -994,7 +994,7 @@ public class Vector3 extends Vector2 implements Serializable
     }
     
     /**
-     * Returns the unit vector for the x-axis. <1.0, 0.0, 0.0>
+     * Returns the unit vector for the x-axis. &lt;1.0, 0.0, 0.0&gt;
      * @return Returns a Vector3 with the x component set to 1.0.
      */
     public static Vector3 unitX()
@@ -1003,7 +1003,7 @@ public class Vector3 extends Vector2 implements Serializable
     }
     
     /**
-     * Returns the unit vector for the y-axis. <0.0, 1.0, 0.0>
+     * Returns the unit vector for the y-axis. &lt;0.0, 1.0, 0.0&gt;
      * @return Returns a Vector3 with the y component set to 1.0.
      */
     public static Vector3 unitY()
@@ -1012,7 +1012,7 @@ public class Vector3 extends Vector2 implements Serializable
     }
 
     /**
-     * Returns the unit vector for the z-axis. <0.0, 0.0, 1.0>
+     * Returns the unit vector for the z-axis. &lt;0.0, 0.0, 1.0&gt;
      * @return Returns a Vector3 with the z component set to 1.0.
      */
     public static Vector3 unitZ()
@@ -1021,7 +1021,7 @@ public class Vector3 extends Vector2 implements Serializable
     }
 
     /**
-     * Special type of Vector3; Zero vector also known as the null vector, <0.0, 0.0, 0.0>
+     * Special type of Vector3; Zero vector also known as the null vector, &lt;0.0, 0.0, 0.0&gt;
      * @return Returns a Vector3 with all components set to 0.0.
      */
     public static Vector3 zero()
@@ -1033,8 +1033,8 @@ public class Vector3 extends Vector2 implements Serializable
     //<editor-fold defaultstate="collapsed" desc="Subtract">
     /**
      * Performs Vector3 Subtraction on two Vector3
-     * @param veca A Vector3 to be subtracted.
-     * @param vecb A Vector3 to be subtracted.
+     * @param a A Vector3 to be subtracted.
+     * @param b A Vector3 to be subtracted.
      * @return Returns a new Vector3 that is the difference between the two provided Vector3.
      */
     public static Vector3 subtract(Vector3 a, Vector3 b)
@@ -1044,8 +1044,8 @@ public class Vector3 extends Vector2 implements Serializable
     
     /**
      * Performs Vector3 Subtraction on a Vector3 and a Vector2
-     * @param veca A Vector3 to be subtracted.
-     * @param vecb A Vector2 to be subtracted.
+     * @param a A Vector3 to be subtracted.
+     * @param b A Vector2 to be subtracted.
      * @return Returns a new Vector3 that is the difference between the Vector3 and the Vector2.
      */
     public static Vector3 subtract(Vector3 a, Vector2 b)
@@ -1055,8 +1055,8 @@ public class Vector3 extends Vector2 implements Serializable
     
     /**
      * Performs Vector3 Subtraction on a Vector2 and a Vector3
-     * @param veca A Vector2 to be subtracted.
-     * @param vecb A Vector3 to be subtracted.
+     * @param a A Vector2 to be subtracted.
+     * @param b A Vector3 to be subtracted.
      * @return Returns a new Vector3 that is the difference between the Vector2 and the Vector3.
      */
     public static Vector3 subtract(Vector2 a, Vector3 b)
@@ -1188,7 +1188,7 @@ public class Vector3 extends Vector2 implements Serializable
     
     //<editor-fold defaultstate="collapsed" desc="To String">
     /**
-     * Converts this Vector3 to string. <x,y,z>
+     * Converts this Vector3 to string. &lt;x,y,z&gt;
      * @return Returns a string representing the Vector3.
      */
     @Override

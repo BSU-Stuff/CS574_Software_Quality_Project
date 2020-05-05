@@ -3,7 +3,7 @@ package game.framework;
 /**
  * Quaternion represents a 4D Vector. Used for rotation around 
  * an object about the (x, y, z) vector by the angle theta, where w = cos(theta/2).
- * <br />
+ * 
  * <h1>Not Yet Implemented</h1>
  * <ul>
  *  <li>Concatenate</li>
