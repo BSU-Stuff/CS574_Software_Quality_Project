@@ -51,11 +51,14 @@ public class PerformanceTiming
 
     /*@
      @ requires g2d != null;
-     @ requires this.textColor.getRed() <= 255;
-     @ requires this.textColor.getBlue() <= 255;
-     @ requires this.textColor.getGreen() <= 255;
+     @ requires this.textColor.getRed() >= 0 && this.textColor.getRed() <= 255;
+     @ requires this.textColor.getBlue() >= 0 && this.textColor.getBlue() <= 255;
+     @ requires this.textColor.getGreen() >= 0 && this.textColor.getGreen() <= 255;
      @ requires this.position.x <= g2d.getClipBounds().getWidth() && position.x >= 0;
-     @ requires this.position.y <= g2d.getClipBounds().getHeight() && position.y >= 0;
+     @ requires (this.position.y + 20) <= g2d.getClipBounds().getHeight() && (position.y + 20) >= 0;
+     @ ensures g2d.getColor().getRed() >= 0 && g2d.getColor().getRed() <= 255;
+     @ ensures g2d.getColor().getBlue() >= 0 && g2d.getColor().getBlue() <= 255;
+     @ ensures g2d.getColor().getGreen() >= 0 && g2d.getColor().getGreen() <= 255;
      @*/
     /**
      * Draws the timing statistics

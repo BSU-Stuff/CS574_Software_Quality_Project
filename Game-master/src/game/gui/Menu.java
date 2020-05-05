@@ -12,15 +12,26 @@ import java.util.LinkedList;
 public class Menu implements GuiComponent 
 {
     // Class Properties
-    public final String LABEL;
-    private MenuState menuState;
-    private LinkedList<MenuItem> items;
+    public final /*@ spec_public @*/ String LABEL;
+    private /*@ spec_public @*/ MenuState menuState;
+    private /*@ spec_public @*/ LinkedList<MenuItem> items;
     // Values that need to be set by parent
-    private Anchor anchor;
-    private Font font;
-    private Color paneColor, borderColor, fontColor;
-    private Rectangle closedBoundingBox, openBoundingBox;
+    private /*@ spec_public @*/ Anchor anchor;
+    private /*@ spec_public @*/ Font font;
+    private /*@ spec_public @*/ Color paneColor, borderColor, fontColor;
+    private /*@ spec_public @*/ Rectangle closedBoundingBox, openBoundingBox;
     
+    /*@
+      @ requires label != null;
+      @ requires fontColor.getRed() >= 0 && fontColor.getRed() <= 255;
+      @ requires fontColor.getBlue() >= 0 && fontColor.getBlue() <= 255;
+      @ requires fontColor.getGreen() >= 0 && fontColor.getGreen() <= 255;
+      @ ensures this.fontColor.getRed() >= 0 && this.fontColor.getRed() <= 255;
+      @ ensures this.fontColor.getBlue() >= 0 && this.fontColor.getBlue() <= 255;
+      @ ensures this.fontColor.getGreen() >= 0 && this.fontColor.getGreen() <= 255;
+      @ ensures this.items.size() == 0;
+      @ ensures this.fontColor == fontColor;
+      @*/
     /**
      * Complete Constructor.
      * Creates a Menu.
@@ -35,6 +46,12 @@ public class Menu implements GuiComponent
         this.items = new LinkedList<>();
     }
     
+    /*@
+      @ requires label != null;
+      @ ensures this.LABEL == label;
+      @ ensures this.fontColor == Color.WHITE;
+      @ ensures this.items.size() == 0;
+      @*/
     /**
      * Creates a Menu.
      * @param label String containing the LABEL of the Menu.
@@ -44,6 +61,11 @@ public class Menu implements GuiComponent
         this(label, Color.WHITE);
     }
     
+    /*@
+      @ requires menuItem != null;
+      @ ensures this.items.size() == \old(this.items.size() + 1);
+      @ ensures this.items.getLast() == menuItem;
+      @*/
     /**
      * Adds a menu item to be displayed when the menu is activated.
      * @param menuItem A MenuItem to be added to this Menu.
@@ -53,6 +75,22 @@ public class Menu implements GuiComponent
         items.add(menuItem);
     }
     
+    /*@
+      @ requires paneColor != null && borderColor != null;
+      @ requires paneColor.getRed() >= 0 &&  paneColor.getRed() <= 255; 
+      @ requires paneColor.getBlue() >= 0 &&  paneColor.getBlue() <= 255; 
+      @ requires paneColor.getGreen() >= 0 &&  paneColor.getGreen() <= 255; 
+      @ requires borderColor.getRed() >= 0 &&  borderColor.getRed() <= 255; 
+      @ requires borderColor.getBlue() >= 0 &&  borderColor.getBlue() <= 255; 
+      @ requires borderColor.getGreen() >= 0 &&  borderColor.getGreen() <= 255; 
+      @ ensures this.paneColor.getRed() >= 0 &&  this.paneColor.getRed() <= 255; 
+      @ ensures this.paneColor.getBlue() >= 0 &&  this.paneColor.getBlue() <= 255; 
+      @ ensures this.paneColor.getGreen() >= 0 &&  this.paneColor.getGreen() <= 255; 
+      @ ensures this.borderColor.getRed() >= 0 &&  this.borderColor.getRed() <= 255; 
+      @ ensures this.borderColor.getBlue() >= 0 &&  this.borderColor.getBlue() <= 255; 
+      @ ensures this.borderColor.getGreen() >= 0 &&  this.borderColor.getGreen() <= 255;
+      @ ensures this.paneColor == paneColor && this.borderColor == borderColor; 
+      @*/
     /**
      * Sets The Color and Border Color of the menu.
      * This is set by the parent object MenuBar.
@@ -65,6 +103,13 @@ public class Menu implements GuiComponent
         this.borderColor = borderColor;
     }
     
+    /*@
+      @ requires anchor != null;
+      @ requires x >= 0 && y >= 0 && closedWidth >=0 && closedHeight >= 0;
+      @ ensures this.anchor == anchor;
+      @ ensures this.closedBoundingBox.x == x && this.closedBoundingBox.y == y
+      @      && this.closedBoundingBox.width == closedWidth && this.closedBoundingBox.height == closedHeight;
+      @*/
     /**
      * Sets properties from parent class.
      * @param anchor Enumeration defining where the Parent MenuBar is anchored.
@@ -179,6 +224,10 @@ public class Menu implements GuiComponent
         }
     }
 
+    /*@
+      @ also requires g2d != null;
+      @ 
+      @*/
     /**
      * Draws the Menu.
      * @param g2d Graphics2D object containing the drawable surface of the window.
