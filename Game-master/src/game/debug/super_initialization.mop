@@ -1,0 +1,23 @@
+package game.debug;
+
+import java.io.*;
+import java.util.*;
+
+super_initialization(Game game, GameTime gt, Graphics2D g2d){
+
+ event initialize before(Game game) :
+ 	call(public void Game.initialize()) && target(game) { System.out.println("initialize"); }
+ event update before(Game game, GameTime gt) :
+ 	call(public void Game.update(GameTime)) && target(game) && args(gt){ System.out.println("update"); }
+ event draw before(Game game, Graphics2D g2d) :
+    call(public void Game.draw(Graphics2D)) && target(game) && args(g2d){ System.out.println("draw"); }
+ event endProg before() : endProgram()
+ 	{ System.err.println("End"); }
+ 	
+ ere : initialize+ update ~draw* draw* endProg
+   
+ @fail{
+    System.err.println("sequence error at " + __LOC + ". You must call initialize, update and then draw.");
+    __RESET;
+ }
+}
