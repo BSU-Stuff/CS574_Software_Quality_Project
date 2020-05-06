@@ -103,12 +103,22 @@ public class TestFrameworkMenu extends Game
         test.setDimensions(800, 600);
         // Setup a menu
         menuBar = new MenuBar(Anchor.BOTTOM, new Font("Times New Roman", Font.PLAIN, 16), Color.GRAY, Color.BLACK);
-        Menu fileMenu = new Menu("FILE",Color.CYAN);
-        MenuItem newMI = new MenuItem("NEW",Color.CYAN);
-        MenuItem openMI = new MenuItem("OPEN",Color.CYAN);
+        Menu fileMenu = new Menu("File",Color.CYAN);
+        MenuItem newMI = new MenuItem("New",Color.CYAN);
+        MenuItem openMI = new MenuItem("Open",Color.CYAN);
         fileMenu.add(newMI);
         fileMenu.add(openMI);
+        Menu editMenu = new Menu("Edit",Color.CYAN);
+        MenuItem copyMI = new MenuItem("Copy",Color.CYAN);
+        MenuItem pasteMI = new MenuItem("Paste",Color.CYAN);
+        editMenu.add(copyMI);
+        editMenu.add(pasteMI);
+        Menu helpMenu = new Menu("Help",Color.CYAN);
+        MenuItem aboutMI = new MenuItem("About",Color.CYAN);
+        helpMenu.add(aboutMI);
         menuBar.add(fileMenu);
+        menuBar.add(editMenu);
+        menuBar.add(helpMenu);
         test.run();
     }
 }
