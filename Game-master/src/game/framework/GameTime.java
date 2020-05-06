@@ -118,6 +118,9 @@ public class GameTime
      * update and adds the difference to the total game time
      * game time = total time app has been running since it started.
      */
+    //@ensure this.currTime > /old this.currtime;
+    //@ensure this.deltaTime > 0 ;
+    //@requires this.prevTime > 0;
     public void tick()
     {
         if(stopped)
