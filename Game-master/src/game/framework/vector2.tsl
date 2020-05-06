@@ -1,0 +1,19 @@
+Parameters:
+	Function:
+		add.	[property Add]
+		addX.	[property AddX]
+		addY.	[property AddY]
+		barycentric. [property Bary]
+		clamp.	[property Clamp]
+		divide.	[property Divide]
+		dotProduct.	[property DotProduct]
+	NumberOfVectors:
+		1.	[if AddX || AddY || Add || Divide]
+		2.	[if DotProduct]
+		3.	[if Clamp || Bary]
+	TypeOfInput:
+		min.
+		max.
+		rand.
+		small.
+		large.
