@@ -1,0 +1,27 @@
+package game.debug;
+
+import java.io.*;
+import java.util.*;
+
+menu_bar_creation(MenuBar mb, Menu m, MenuItem mi, String s, Color c){
+
+ event menu_bar before(MenuBar mb) :
+ 	call(public void MenuBar.MenuBar()) && target(mb) { System.out.println("creating MenuBar"); }
+ event menu before(Menu m, String s, Color c) :
+ 	call(public void Menu.Menu(String,Color)) && target(m) && args(s,c){ System.out.println("creating Menu with name " + s + " of color " + c); }
+ event menu_item before(MenuItem mi, String s, Color c) :
+        call(public void MenuItem.MenuItem(String, Color)) && target(mi) && args(s,c){ System.out.println("creating MenuItem with name " + s + " of color " + c); }
+ event add_menu before(MenuBar mb, Menu m) :
+        call(public void MenuBar.add(Menu)) && target(mb) && args(m){ System.out.println("adding Menu " + m + " to MenuBar " + mb); }
+ event add_menu_item before(Menu m, MenuItem mi) :
+        call(public void Menu.add(MenuItem)) && target(m) && args(mi){ System.out.println("adding Menu " + m + " to MenuBar " + mb); }
+ event endProg before() : endProgram()
+ 	{ System.err.println("End"); }
+ 	
+ ere : menu_bar* menu* menu_item* add_menu* add_menu_item* endProg
+   
+ @fail{
+    System.err.println("sequence error at " + __LOC + ". You must call initialize, update and then draw.");
+    __RESET;
+ }
+}
