@@ -309,7 +309,9 @@ public abstract class Game extends JFrame
      */
     public void initialize()
     {
+        
         running = true;
+        //@invariant running=true;
         // Default is Cornflower blue
         background = (background == null) ? background = new Color(100, 149, 237) : background;
         // Add Keyboard
