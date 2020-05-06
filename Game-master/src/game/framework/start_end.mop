@@ -3,12 +3,12 @@ package game.framework;
 import java.io.*;
 import java.util.*;
 
-super_initialization(Game game, Game exitGame){
+start_end(Game g, int errorCode){
 
- event Game before(Game exitGame) :
- 	call(public void Game.game()) && target(game) { System.out.println("start game"); }
-event exitGame after() : game()
- 	{ System.err.println("ending"); }
+ event game before(Game g) :
+ 	call(public void Game.game()) && target(g) { System.out.println("start game"); }
+ event exitGame after(Game g, int errorCode) :
+        call(public static void Game.exitGame(int)) && target(g) && args(errorCode) { System.err.println("ending"); }
  	 
  ere : game exitGame
    

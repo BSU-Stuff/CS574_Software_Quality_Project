@@ -3,18 +3,20 @@ package game.framework;
 import java.io.*;
 import java.util.*;
 
-super_initialization(Game game, Keyboard keyboard, Mouse mouse){
+game_input(Game g, Keyboard keyboard, Mouse mouse){
 
- event Game before(Game initialize) :
- 	call(public void Game.game()) && target(game) { System.out.println("start game"); }
- event initialize before(Game addKeyListener && target(game) :
- 	call(public void Game.initialize()) && target(game) { System.out.println("initialize"); }
- event addKeyListener before() : run()
- 	{ System.err.println("starting"); }
- event addMouseListener before() : run()
- 	{ System.err.println("starting"); }
+ event game before(Game initialize) :
+ 	call(public void Game.game()) && target(g) { System.out.println("start game"); }
+ event initialize before(Game g) :
+ 	call(public void Game.initialize()) && target(g) { System.out.println("initialize"); }
+ event run before(Game g) : 
+        call(public void Game.run()) && target(g) { System.out.println("running the game"); }
+ event addKeyListener before(Game g, Keyboard keyboard) :
+        call(public void Game.addKeyListener(Keyboard)) && target(g) && args(keyboard) { System.err.println("adding key listener"); }
+ event addMouseListener before(Game g, Mouse mouse) :
+        call(public void Game.addMouseListener(Mouse)) && target(g) && args(mouse) { System.err.println("adding mouse listener"); }
  	 
- ere : game initialize run*
+ ere : game initialize run addKeyListener addMouseListener
    
  @fail{
     System.err.println("sequence error at " + __LOC + ". You must call Game, game.input and then run.");
