@@ -132,6 +132,7 @@ public abstract class Game extends JFrame
             try
             {
                 // Update The GameTime
+                //@assert this.fps > 30 ;
                 gameTime.tick();
                 // Update Game Logic
                 update(gameTime);
