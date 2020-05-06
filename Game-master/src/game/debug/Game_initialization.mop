@@ -1,0 +1,21 @@
+package game.framework;
+
+import java.io.*;
+import java.util.*;
+
+super_initialization(Game game, GameTime gt, Graphics2D g2d){
+
+ event Game before(Game PerformanceTiming) :
+ 	call(public void Game.game()) && target(game) { System.out.println("start game"); }
+ event PreformanceTiming before(GameTime GameTime) :
+ 	call(public void Game.update(GameTime)) && target(game){ System.out.println("update"); }
+ event endProg before() : endProgram()
+ 	{ System.err.println("End"); }
+ 	 
+ ere : Game PerformanceTiming GameTime
+   
+ @fail{
+    System.err.println("sequence error at " + __LOC + ". You must call Game, PreformanceTiming and then Gametime.");
+    __RESET;
+ }
+}
