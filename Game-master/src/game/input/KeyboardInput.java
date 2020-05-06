@@ -11,7 +11,7 @@ import java.awt.event.KeyListener;
 
 public class KeyboardInput implements KeyListener
 {
-    private static final int KEY_COUNT = 256;
+    private /*@ spec_public @*/ static final int KEY_COUNT = 256;
 
     private enum KeyState
     {
@@ -102,10 +102,13 @@ public class KeyboardInput implements KeyListener
      */
     public synchronized void keyReleased(KeyEvent e)
     {
+    
+        
         int keyCode = e.getKeyCode();
         if(keyCode >= 0 && keyCode < KEY_COUNT)
         {
             currentKeys[keyCode] = false;
+            /*@ assert currentKeys[keyCode] != \old currentKeys[keyCode]@*/ 
         }
     }
 
