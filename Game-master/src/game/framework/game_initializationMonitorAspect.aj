@@ -229,7 +229,7 @@ class game_initializationMonitor extends com.runtimeverification.rvmonitor.java.
 
 	final void Prop_1_handler_fail (){
 		{
-			System.err.println("sequence error at " + com.runtimeverification.rvmonitor.java.rt.ViolationRecorder.getLineOfCode() + ". You must call Game, PreformanceTiming and then Gametime.");
+			System.err.println("sequence error at " + com.runtimeverification.rvmonitor.java.rt.ViolationRecorder.getLineOfCode() + ". You must call game() to initialize the game and then update to initialize the game and GameTime that is required for the rest of the game to function.");
 			this.reset();
 		}
 

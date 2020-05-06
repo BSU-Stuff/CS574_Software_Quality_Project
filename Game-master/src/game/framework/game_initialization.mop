@@ -15,7 +15,7 @@ game_initialization(Game g, GameTime gt, Graphics2D g2d){
  ere : game update
    
  @fail{
-    System.err.println("sequence error at " + __LOC + ". You must call Game, PreformanceTiming and then Gametime.");
+    System.err.println("sequence error at " + __LOC + ". You must call game() to initialize the game and then update to initialize the game and GameTime that is required for the rest of the game to function.");
     __RESET;
  }
 }

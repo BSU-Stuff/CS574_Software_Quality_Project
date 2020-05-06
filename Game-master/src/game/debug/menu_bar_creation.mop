@@ -14,14 +14,14 @@ menu_bar_creation(MenuBar mb, Menu m, MenuItem mi, String s, Color c){
  event add_menu before(MenuBar mb, Menu m) :
         call(public void MenuBar.add(Menu)) && target(mb) && args(m){ System.out.println("adding Menu " + m + " to MenuBar " + mb); }
  event add_menu_item before(Menu m, MenuItem mi) :
-        call(public void Menu.add(MenuItem)) && target(m) && args(mi){ System.out.println("adding Menu " + m + " to MenuBar " + mb); }
+        call(public void Menu.add(MenuItem)) && target(m) && args(mi){ System.out.println("adding MenuItem " + mi + " to Menu " + m); }
  event endProg before() : endProgram()
  	{ System.err.println("End"); }
  	
- ere : menu_bar* menu* menu_item* add_menu* add_menu_item* endProg
+ ere : menu_bar menu menu_item add_menu_item* add_menu* endProg
    
  @fail{
-    System.err.println("sequence error at " + __LOC + ". You must call initialize, update and then draw.");
+    System.err.println("sequence error at " + __LOC + ". You must create a MenuBar, Menu(s), and MenuItem(s). Then you must add the MenuItem(s) to the Menu(s) before adding them to the MenuBar.");
     __RESET;
  }
 }
