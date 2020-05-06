@@ -1,0 +1,19 @@
+package game.framework;
+
+import java.io.*;
+import java.util.*;
+
+super_initialization(Game game, Game exitGame){
+
+ event Game before(Game exitGame) :
+ 	call(public void Game.game()) && target(game) { System.out.println("start game"); }
+event exitGame after() : game()
+ 	{ System.err.println("ending"); }
+ 	 
+ ere : game exitGame
+   
+ @fail{
+    System.err.println("sequence error at " + __LOC + ". You must call Game, before endGame");
+    __RESET;
+ }
+}
