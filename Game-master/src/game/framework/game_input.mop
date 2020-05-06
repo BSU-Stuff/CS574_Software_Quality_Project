@@ -1,0 +1,23 @@
+package game.framework;
+
+import java.io.*;
+import java.util.*;
+
+super_initialization(Game game, Keyboard keyboard, Mouse mouse){
+
+ event Game before(Game initialize) :
+ 	call(public void Game.game()) && target(game) { System.out.println("start game"); }
+ event initialize before(Game addKeyListener && target(game) :
+ 	call(public void Game.initialize()) && target(game) { System.out.println("initialize"); }
+ event addKeyListener before() : run()
+ 	{ System.err.println("starting"); }
+ event addMouseListener before() : run()
+ 	{ System.err.println("starting"); }
+ 	 
+ ere : game initialize run*
+   
+ @fail{
+    System.err.println("sequence error at " + __LOC + ". You must call Game, game.input and then run.");
+    __RESET;
+ }
+}
