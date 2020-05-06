@@ -43,6 +43,7 @@ public class KeyboardInput implements KeyListener
     {
         for(int i = 0; i < KEY_COUNT; ++i)
         {
+        /*@ assert key[i].KeyState == \old key[i].KeyState @*/ 
             // Set the key state
             if(currentKeys[i])
             {
