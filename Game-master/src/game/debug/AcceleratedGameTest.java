@@ -33,7 +33,7 @@ public class AcceleratedGameTest
         // Create canvas for painting...
         Canvas canvas = new Canvas();
         canvas.setIgnoreRepaint(true);
-        canvas.setSize(640, 480);
+        canvas.setSize(3840, 2160);
 
         // Add canvas to game window...
         app.add(canvas);

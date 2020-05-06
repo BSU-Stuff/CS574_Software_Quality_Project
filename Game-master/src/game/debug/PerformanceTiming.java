@@ -101,4 +101,13 @@ public class PerformanceTiming
     {
         this.setPosition(new Vector2(x, y));
     }
+    
+    /**
+     * 
+     * @return fps
+     */
+    public /*@ pure @*/ float getFps()
+    {
+    	return this.fps;
+    }
 }

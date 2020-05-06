@@ -13,7 +13,7 @@ public class KeyboardInput implements KeyListener
 {
     private /*@ spec_public @*/ static final int KEY_COUNT = 256;
 
-    private enum KeyState
+    private /*@ spec_public @*/ enum KeyState
     {
         RELEASED, // Not down
         PRESSED,  // Down, but not the first time
@@ -21,10 +21,10 @@ public class KeyboardInput implements KeyListener
     }
 
     // Current state of the keyboard
-    private boolean[] currentKeys = null;
+    private /*@ spec_public @*/ boolean[] currentKeys = null;
 
     // Polled keyboard state
-    private KeyState[] keys = null;
+    private /*@ spec_public @*/ KeyState[] keys = null;
 
     public KeyboardInput()
     {
@@ -39,11 +39,13 @@ public class KeyboardInput implements KeyListener
     /**
      * Polls the keyboard for new keys that might be pressed this update.
      */
+    /*@ ensures (\forall int i; 0 <= i && i < KEY_COUNT; keys[i] == \old(keys[i]));
+      @ 
+      @*/
     public synchronized void poll()
     {
         for(int i = 0; i < KEY_COUNT; ++i)
         {
-        /*@ assert key[i].KeyState == \old key[i].KeyState @*/ 
             // Set the key state
             if(currentKeys[i])
             {
@@ -108,8 +110,8 @@ public class KeyboardInput implements KeyListener
         if(keyCode >= 0 && keyCode < KEY_COUNT)
         {
             currentKeys[keyCode] = false;
-            /*@ assert currentKeys[keyCode] != \old currentKeys[keyCode]@*/ 
         }
+        /*@ assert currentKeys[e.getKeyCode()] != \old(currentKeys[e.getKeyCode()]); @*/ 
     }
 
     /**

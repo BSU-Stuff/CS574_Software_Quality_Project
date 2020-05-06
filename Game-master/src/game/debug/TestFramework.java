@@ -56,7 +56,7 @@ public class TestFramework extends Game
     {
         // Call base class
         super.update(gameTime);
-        //@assert this.fps > 30 ;
+        //@assert this.fps.getFps() > 30 ;
         this.fps.update(gameTime);
         
         

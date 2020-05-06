@@ -10,12 +10,12 @@ import java.awt.Graphics2D;
 
 public class MenuItem implements GuiComponent 
 {
-    private final String LABEL;
+    private /*@ spec_public @*/ final String LABEL;
     // Properties to be set by parent items
-    private Anchor anchor;
-    private Rectangle bounds;
-    protected Font font;
-    protected Color fontColor, hoverColor;
+    private /*@ spec_public @*/ Anchor anchor;
+    private /*@ spec_public @*/ Rectangle bounds;
+    protected /*@ spec_public @*/ Font font;
+    protected /*@ spec_public @*/ Color fontColor, hoverColor;
         
     /**
      * Complete Constructor
@@ -103,9 +103,9 @@ public class MenuItem implements GuiComponent
     }
 
     /*@
-      @ requires g2d != null;
-      @ ensures g2d.getFont() == this.font;
-      @ ensures g2d.getColor() == this.fontColor;
+      @ also requires g2d != null;
+      @ also ensures g2d.getFont() == this.font;
+      @ also ensures g2d.getColor() == this.fontColor;
       @*/
     /**
      * Draws this MenuItem.

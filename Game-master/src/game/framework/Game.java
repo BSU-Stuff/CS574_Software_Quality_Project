@@ -48,7 +48,7 @@ public abstract class Game extends JFrame
     public Game(String title, int width, int height)
     {
         this.setTitle(title);
-        //@ensure this.fps > 30 ;
+        //assert this.fps > 30 : "FPS is not greater than 30";
         this.fps = new PerformanceTiming();
         this.width = width;
         this.height = height;
@@ -132,7 +132,7 @@ public abstract class Game extends JFrame
             try
             {
                 // Update The GameTime
-                //@assert this.fps > 30 ;
+                //@ assert this.fps.getFps() > 30;
                 gameTime.tick();
                 // Update Game Logic
                 update(gameTime);
@@ -309,11 +309,12 @@ public abstract class Game extends JFrame
     /**
      * Initializes the Window, Keyboard, Mouse, and GameTime objects.    
      */
+    /*@
+      @ ensures gameTime != null;
+      @*/
     public void initialize()
     {
-        
         running = true;
-        //@invariant running=true;
         // Default is Cornflower blue
         background = (background == null) ? background = new Color(100, 149, 237) : background;
         // Add Keyboard
@@ -323,7 +324,6 @@ public abstract class Game extends JFrame
         this.canvas.addMouseListener(Mouse.mouse);
         this.canvas.addMouseMotionListener(Mouse.mouse);
         // Create GameTime object
-         //@ensure gameTime == null;
         gameTime = new GameTime();
         // Create the Graphics2D context to be used for font metrics.
         FontHelper.initialize();

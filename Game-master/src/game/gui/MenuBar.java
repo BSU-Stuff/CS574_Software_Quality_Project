@@ -144,7 +144,7 @@ public class MenuBar implements GuiComponent
     }
 
     /*@
-      @ requires g2d != null;
+      @ also requires g2d != null;
       @*/
     /**
      * Draws The MenuBar component.
@@ -155,7 +155,7 @@ public class MenuBar implements GuiComponent
     {
         // Set the paneColor of the MenuBar
         g2d.setColor(paneColor);
-        /*@ ensures g2d.getColor() == this.panelColor; @*/
+        /*@ ensures g2d.getColor() == this.paneColor; @*/
         // Fill The Menu Bar
         g2d.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
         // Set The Color of the Border
