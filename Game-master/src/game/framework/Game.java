@@ -48,6 +48,7 @@ public abstract class Game extends JFrame
     public Game(String title, int width, int height)
     {
         this.setTitle(title);
+        //@ensure this.fps > 30 ;
         this.fps = new PerformanceTiming();
         this.width = width;
         this.height = height;
