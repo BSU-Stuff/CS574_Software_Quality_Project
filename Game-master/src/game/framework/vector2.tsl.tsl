@@ -1,210 +1,147 @@
 
-Test Case 1  		(Key = 1.1.1.)
+Test Case 1  		(Key = 1.1.1.2.)
    Function        :  add
    NumberOfVectors :  1
    TypeOfInput     :  min
+   NumberOfValues  :  two
 
 
-Test Case 2  		(Key = 1.1.2.)
+Test Case 2  		(Key = 1.1.2.2.)
    Function        :  add
    NumberOfVectors :  1
    TypeOfInput     :  max
+   NumberOfValues  :  two
 
 
-Test Case 3  		(Key = 1.1.3.)
+Test Case 3  		(Key = 1.1.3.2.)
    Function        :  add
    NumberOfVectors :  1
    TypeOfInput     :  rand
+   NumberOfValues  :  two
 
 
-Test Case 4  		(Key = 1.1.4.)
-   Function        :  add
-   NumberOfVectors :  1
-   TypeOfInput     :  small
-
-
-Test Case 5  		(Key = 1.1.5.)
-   Function        :  add
-   NumberOfVectors :  1
-   TypeOfInput     :  large
-
-
-Test Case 6  		(Key = 2.1.1.)
+Test Case 4  		(Key = 2.1.1.1.)
    Function        :  addX
    NumberOfVectors :  1
    TypeOfInput     :  min
+   NumberOfValues  :  one
 
 
-Test Case 7  		(Key = 2.1.2.)
+Test Case 5  		(Key = 2.1.2.1.)
    Function        :  addX
    NumberOfVectors :  1
    TypeOfInput     :  max
+   NumberOfValues  :  one
 
 
-Test Case 8  		(Key = 2.1.3.)
+Test Case 6  		(Key = 2.1.3.1.)
    Function        :  addX
    NumberOfVectors :  1
    TypeOfInput     :  rand
+   NumberOfValues  :  one
 
 
-Test Case 9  		(Key = 2.1.4.)
-   Function        :  addX
-   NumberOfVectors :  1
-   TypeOfInput     :  small
-
-
-Test Case 10 		(Key = 2.1.5.)
-   Function        :  addX
-   NumberOfVectors :  1
-   TypeOfInput     :  large
-
-
-Test Case 11 		(Key = 3.1.1.)
+Test Case 7  		(Key = 3.1.1.1.)
    Function        :  addY
    NumberOfVectors :  1
    TypeOfInput     :  min
+   NumberOfValues  :  one
 
 
-Test Case 12 		(Key = 3.1.2.)
+Test Case 8  		(Key = 3.1.2.1.)
    Function        :  addY
    NumberOfVectors :  1
    TypeOfInput     :  max
+   NumberOfValues  :  one
 
 
-Test Case 13 		(Key = 3.1.3.)
+Test Case 9  		(Key = 3.1.3.1.)
    Function        :  addY
    NumberOfVectors :  1
    TypeOfInput     :  rand
+   NumberOfValues  :  one
 
 
-Test Case 14 		(Key = 3.1.4.)
-   Function        :  addY
-   NumberOfVectors :  1
-   TypeOfInput     :  small
-
-
-Test Case 15 		(Key = 3.1.5.)
-   Function        :  addY
-   NumberOfVectors :  1
-   TypeOfInput     :  large
-
-
-Test Case 16 		(Key = 4.3.1.)
+Test Case 10 		(Key = 4.3.1.2.)
    Function        :  barycentric
    NumberOfVectors :  3
    TypeOfInput     :  min
+   NumberOfValues  :  two
 
 
-Test Case 17 		(Key = 4.3.2.)
+Test Case 11 		(Key = 4.3.2.2.)
    Function        :  barycentric
    NumberOfVectors :  3
    TypeOfInput     :  max
+   NumberOfValues  :  two
 
 
-Test Case 18 		(Key = 4.3.3.)
+Test Case 12 		(Key = 4.3.3.2.)
    Function        :  barycentric
    NumberOfVectors :  3
    TypeOfInput     :  rand
+   NumberOfValues  :  two
 
 
-Test Case 19 		(Key = 4.3.4.)
-   Function        :  barycentric
-   NumberOfVectors :  3
-   TypeOfInput     :  small
-
-
-Test Case 20 		(Key = 4.3.5.)
-   Function        :  barycentric
-   NumberOfVectors :  3
-   TypeOfInput     :  large
-
-
-Test Case 21 		(Key = 5.3.1.)
+Test Case 13 		(Key = 5.3.1.2.)
    Function        :  clamp
    NumberOfVectors :  3
    TypeOfInput     :  min
+   NumberOfValues  :  two
 
 
-Test Case 22 		(Key = 5.3.2.)
+Test Case 14 		(Key = 5.3.2.2.)
    Function        :  clamp
    NumberOfVectors :  3
    TypeOfInput     :  max
+   NumberOfValues  :  two
 
 
-Test Case 23 		(Key = 5.3.3.)
+Test Case 15 		(Key = 5.3.3.2.)
    Function        :  clamp
    NumberOfVectors :  3
    TypeOfInput     :  rand
+   NumberOfValues  :  two
 
 
-Test Case 24 		(Key = 5.3.4.)
-   Function        :  clamp
-   NumberOfVectors :  3
-   TypeOfInput     :  small
-
-
-Test Case 25 		(Key = 5.3.5.)
-   Function        :  clamp
-   NumberOfVectors :  3
-   TypeOfInput     :  large
-
-
-Test Case 26 		(Key = 6.1.1.)
+Test Case 16 		(Key = 6.1.1.1.)
    Function        :  divide
    NumberOfVectors :  1
    TypeOfInput     :  min
+   NumberOfValues  :  one
 
 
-Test Case 27 		(Key = 6.1.2.)
+Test Case 17 		(Key = 6.1.2.1.)
    Function        :  divide
    NumberOfVectors :  1
    TypeOfInput     :  max
+   NumberOfValues  :  one
 
 
-Test Case 28 		(Key = 6.1.3.)
+Test Case 18 		(Key = 6.1.3.1.)
    Function        :  divide
    NumberOfVectors :  1
    TypeOfInput     :  rand
+   NumberOfValues  :  one
 
 
-Test Case 29 		(Key = 6.1.4.)
-   Function        :  divide
-   NumberOfVectors :  1
-   TypeOfInput     :  small
-
-
-Test Case 30 		(Key = 6.1.5.)
-   Function        :  divide
-   NumberOfVectors :  1
-   TypeOfInput     :  large
-
-
-Test Case 31 		(Key = 7.2.1.)
+Test Case 19 		(Key = 7.2.1.2.)
    Function        :  dotProduct
    NumberOfVectors :  2
    TypeOfInput     :  min
+   NumberOfValues  :  two
 
 
-Test Case 32 		(Key = 7.2.2.)
+Test Case 20 		(Key = 7.2.2.2.)
    Function        :  dotProduct
    NumberOfVectors :  2
    TypeOfInput     :  max
+   NumberOfValues  :  two
 
 
-Test Case 33 		(Key = 7.2.3.)
+Test Case 21 		(Key = 7.2.3.2.)
    Function        :  dotProduct
    NumberOfVectors :  2
    TypeOfInput     :  rand
-
-
-Test Case 34 		(Key = 7.2.4.)
-   Function        :  dotProduct
-   NumberOfVectors :  2
-   TypeOfInput     :  small
-
-
-Test Case 35 		(Key = 7.2.5.)
-   Function        :  dotProduct
-   NumberOfVectors :  2
-   TypeOfInput     :  large
+   NumberOfValues  :  two
 

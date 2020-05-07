@@ -1,11 +1,11 @@
 Parameters:
 	Function:
 		add.	[property Add]
-		addX.	[property AddX]
-		addY.	[property AddY]
+		addX.	[property AddX, SingleVal]
+		addY.	[property AddY, SingleVal]
 		barycentric. [property Bary]
 		clamp.	[property Clamp]
-		divide.	[property Divide]
+		divide.	[property Divide, SingleVal]
 		dotProduct.	[property DotProduct]
 	NumberOfVectors:
 		1.	[if AddX || AddY || Add || Divide]
@@ -15,5 +15,6 @@ Parameters:
 		min.
 		max.
 		rand.
-		small.
-		large.
+	NumberOfValues:
+		one.	[if SingleVal]
+		two.    [if !SingleVal]
